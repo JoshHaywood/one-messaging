@@ -1,0 +1,696 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+  scroll-behavior: smooth; /* Smooths out scrolling */
+}
+
+:root {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  --primary-colour: #0c77b7;
+  --secondary-colour: #ffffff;
+  --tertiary-colour: #15171a;
+  --quaternary-colour: #a8a8a8;
+  --quinary-colour: #3378aa28; 
+  --senary-colour: #525151;
+  --septenary-colour: #1f587c;
+  --octonary-colour: #d4d4d4;
+
+  --primary-text-colour: #ffffff; 
+  --secondary-text-colour: #000000;
+  --tertiary-text-colour: #3f8ec7;
+  --quaternary-text-colour: #525151;
+}
+
+* {
+  box-sizing: border-box; /* Incase browsers do not use border box */
+}
+
+body { 
+  background-color: var(--quinary-colour);
+  margin: 0; 
+  padding: 0; 
+  overflow-x: hidden; /* Prevents any content overflow */
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-text-colour);
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--primary-text-colour);
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 1.75rem;
+  color: var(--primary-text-colour);
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: var(--primary-text-colour);
+  font-weight: 300;
+}
+
+h5 {
+  font-size: 1.25rem;
+  color: var(--primary-text-colour);
+  font-weight: 300;
+}
+
+h6 {
+  font-size: 1rem;
+  color: var(--primary-text-colour);
+  font-weight: 300;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--primary-text-colour);
+  font-weight: 300;
+}
+
+a {
+  font-size: 1rem;
+  color: var(--primary-text-colour);
+  font-weight: 300;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  font-size: 1rem;
+  color: var(--primary-text-colour);
+  font-weight: 300;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+input, textarea {
+  font-family: 'roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--primary-text-colour);
+  cursor: pointer;
+}
+
+/* Scrollbar */
+body::-webkit-scrollbar, .chatbox-sidebar::-webkit-scrollbar, .message::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+body::-webkit-scrollbar-track , .chatbox-sidebar::-webkit-scrollbar-track, .message::-webkit-scrollbar-track { 
+  background: var(--quaternary-colour);
+}
+
+body::-webkit-scrollbar-thumb , .chatbox-sidebar::-webkit-scrollbar-thumb, .message::-webkit-scrollbar-thumb {
+  background: var(--primary-colour);
+}
+
+/* Animations */
+@keyframes popOut {   
+  100% {
+    transform: scale(1.03); /* Increases scale slightly */
+  }
+}
+
+@keyframes fadeInUp {
+  0% { 
+     opacity: 0; 
+     transform:translate3d(0, 100%, 0); /* Translates elements up Y vector */
+  }
+  
+  100% { 
+     opacity: 1; /* Sets opacity to full */
+     transform: none;
+  }
+}
+
+/* #region Header */
+
+.navbar {
+  background-color: var(--secondary-colour);
+  box-shadow: 0 0 5px #000000;
+  padding: 5px;
+  position: fixed;
+  top: 0; /* Fixed to top */
+  width: 100%; /* Prevents fixed position from shrinking bar */
+  z-index: 1; /* Prevents fixed navbars from disappearing behind content */
+}
+
+.logoIMG {
+  width: 180px;
+  padding: 0.5rem; /* Makes navbar larger than image dimensions */
+}
+
+/* #endregion */
+
+/* #region Footer */
+
+.footer {
+  left: 0;
+  bottom: 0; /* To position footer at the bottom of the page */
+  width: 100%;
+  background-color: var(--senary-colour);
+  padding-top: 1rem;
+}
+
+.footnote {
+  display: flex;
+  color: var(--primary-text-colour);
+  width: 95%;
+  margin: auto;
+  justify-content: space-between;
+  border-top: 1px solid var(--primary-colour);
+}
+
+.footnote button {
+  background-color: Transparent;
+  border: none;
+  color: var(--primary-text-colour);
+}
+
+.footnote button:hover {
+  text-decoration: underline;
+}
+
+/* #endregion */
+
+/* #region Error */
+
+.error { 
+  text-align: center;
+  margin-left: 1rem; /* Moves text away from edge of page */
+  padding: 8rem 0; /* To space text away from the header */
+  font-size: 1.5rem;
+}
+
+.error h1 {
+  font-size: 5rem;
+  color: var(--quaternary-text-colour);
+}
+
+.error h5 {
+  color: var(--quaternary-text-colour);
+}
+
+.error button {
+  padding: 0.8rem 1.5rem;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  background-color: var(--primary-colour);
+  border: none;
+  border-radius: 25px;
+}
+
+.error button:hover {
+  background-color: var(--tertiary-text-colour);
+}
+
+/* #endregion */
+
+/* #region Database */
+
+.database {
+  margin: 7rem 3rem; /* Prevent collision with header and footer */
+  display: flex;
+  overflow-x: scroll;
+}
+
+.database th {
+  border: 1px solid #000000;
+  padding: 0 0.5rem;
+  background-color: var(--secondary-colour);
+}
+
+.database h4 {
+  color: var(--secondary-text-colour);
+}
+
+.database h5 {
+  margin: auto;
+  background-color: var(--quaternary-colour);
+}
+
+.database .password {
+  height: 200px; /* Pre defined dimesions to prevent hash passwords going outside table */
+  width: 180px; 
+  word-break: break-all; /* Prevent passwords being all oneline */
+}
+
+.database .salt {
+  height: 780px;
+  width: 180px;
+  word-break: break-all;
+}
+
+/* #endregion */
+
+/* #region Index page */
+
+.account { 
+  text-align: center;
+  padding: 8rem 0; /* To space heading away from the header */
+  height: 100vh; /* Keeps footer from moving away from page bottom */
+  width: 75%;
+  margin: auto;
+  margin-bottom: 14rem; /* Prevents footer from overlapping */
+}
+
+.account .loginMessage {
+  color: var(--primary-colour);
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.account .container {
+  display: flex;
+  justify-content: center;
+  color: var(--secondary-colour);
+  background: linear-gradient(to left, #0c77b7 0%, #0c77b7 50%,#ffffff 50%,#ffffff 100%);
+}
+
+.login, .register {
+  text-align: left; /* Keeps alignment when there are line breaks */
+}
+
+.login h3, .register h3 {
+  font-weight: 500;
+}
+
+.login input, .register input {
+  color: var(--quaternary-text-colour);
+}
+
+.login {
+  width: 50%;
+  margin: 2rem 3rem 2rem 0;
+}
+
+.login h3 {
+  padding: 1.5rem 1rem;
+  background-color: var(--primary-colour);
+  border-bottom-right-radius: 25px;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column; /* Prevents button from being inline */
+  align-items: center;
+}
+
+.login input {
+  width: 80%;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border: 1px solid #000000;
+}
+
+.login form .container:first-of-type {
+  background: none; /* Prevents whitespace appearing */
+  width: 80%; /* To match other inputs dimesions */
+  margin: 2rem; 
+}
+
+.login form .container input:first-of-type {
+  margin: 0; /* Prevents inherited margin */
+}
+
+.login a:first-of-type {
+  margin: -2.3rem 0.5rem 0 auto; /* Aligns icon with right of input */
+}
+
+.login img:first-of-type {
+  height: auto;
+  width: 24px;
+  background-color: var(--secondary-colour);
+}
+
+.login input:first-child {
+  margin-top: 1rem; /* Creates space between header and form */
+}
+
+.login input:nth-child(3) { /* The login in input */
+  width: 80%;
+  padding: 1rem;
+  background-color: var(--primary-colour);
+  color: var(--primary-text-colour);
+  border: none;
+  margin-top: 2rem; /* Creates equal distancing between all input */
+}
+
+.login input:hover:nth-child(3) {
+  background-color: rgba(12, 119, 183, 0.85)
+}
+
+.login form .container {
+  background: none;
+  flex-direction: column;
+  align-items: left;
+  margin: 0 3rem;
+}
+
+.login form h5 {
+  color: var(--primary-colour);
+  border: 1px solid var(--primary-colour);
+  padding: 1rem;
+  border-bottom-right-radius: 25px;
+}
+
+.login form .container input {
+  width: 100%;
+  border: 1px solid #000000;
+}
+
+.login form .container:nth-of-type(2) {
+  width: 79%; /* Prevents room container being larger than login container */
+}
+
+.register {
+  width: 50%;
+}
+
+.register h3 {
+  margin: 2rem 0;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.register form {
+  display: flex;
+  flex-direction: column; /* Prevents button from being inline */
+  align-items: center;
+}
+
+.register input {
+  width: 80%;
+  padding: 1rem;
+  margin: 2.5rem 0;
+  border: 1px solid #000000;
+}
+
+.register input:first-child {
+  margin-top: 2rem; /* Creates space between header and form */
+}
+
+.register form .container {
+  display: flex;
+  background: none; /* Prevents whitespace appearing */
+  align-items: center;
+  margin-right: 0.5rem; /* Counteract -margin effects in SVG */
+  width: 100%; /* Prevents shrinking from -margin */
+}
+
+.register a {
+  margin-left: -2rem; /* Moves SVG input input field */
+}
+
+.register img {
+  height: auto;
+  width: 24px;
+  background-color: var(--secondary-colour);
+}
+
+@media (max-width: 900px) {
+  .account {
+    margin-bottom: 61rem; /* Prevents page from colliding with footer */
+  }
+
+  .account .container {
+    flex-direction: column; /* Changes flex direction for mobile */
+    background: linear-gradient(to top, #0c77b7 0%, #0c77b7 50%,#ffffff 50%,#ffffff 100%);
+  }
+
+  .register .container {
+    flex-direction: row; /* Overrides effects of parent */
+  }
+
+  .login, .register {
+    width: 100%;
+  }
+
+  .login form input:first-child {
+    margin-top: 3rem; /* Prevents input disappearing behind header */
+  }
+
+  .register h3 {
+    margin: 0; /* Removes gap between login and register headers */
+    padding: 10rem 1rem 0.6rem 1rem; /* Prevents collison with page edge and heading disappearing */
+  }
+
+  .register form {
+    padding-bottom: 2rem;
+  }
+
+  .login, .login h3 {
+    margin: 0; /* Removes space above header */
+  }
+}
+
+/* #endregion */
+
+/* #region Chatbox page */
+
+.chatbox {
+  background-color: var(--secondary-colour);
+  margin: 12rem auto; /* Space header and footer away from chat form */
+  height: 80vh;
+  width: 80%;
+  box-shadow: 0 0 1px 0 #000000;
+  border-radius: 5px;
+}
+
+.chatbox-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-colour);
+}
+
+.chatbox-heading img {
+  margin: 1rem;
+}
+
+.logo-iconIMG {
+  width: 60px;
+}
+
+.chatbox-heading h2{
+  color: var(--primary-text-colour);
+  margin: 0 1rem;
+}
+
+.chatbox-heading button {
+  margin-right: 1rem;
+  padding: 0.3rem 1rem;
+  background: none;
+  color: var(--primary-text-colour);
+  border: 1px solid #ffffff;
+}
+
+.chatbox-heading button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+}
+
+.chatbox .container:nth-child(2) { /* 2nd child to avoid affecting the sidebar */
+  display: flex;
+  overflow: hidden;
+}
+
+.chatbox-sidebar {
+  background-color: var(--septenary-colour);
+  position: relative;
+  height: 70vh; 
+  width: 20%;
+  overflow-y: auto;
+}
+
+.sidebar-toggle {
+  display: none; /* Sets display to none by default for javascript function */
+  flex-direction: column; /* Sets flex direction to prevent bars from aligning to row */
+  justify-content: space-between; /* To ensure even distance between bars */
+  height: 22px;
+  width: 22px;
+  position: relative;
+  margin: auto;
+  top: 1rem; /* Spaces menu away from header without comprimsing sidebar dimesions */
+}
+
+.sidebar-toggle .bar {
+  height: 3px; 
+  width: 100%;
+  background-color: var(--secondary-colour);
+  border-radius: 10px;
+}
+
+.chatbox-sidebar .container {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+} 
+
+.chatbox-sidebar svg {
+  fill: var(--secondary-colour);
+  height: 24px;
+  width: 24px;
+  margin-top: 1rem; /* Aligns SVG with heading */
+}
+
+.chatbox-sidebar h4 {
+  color: var(--primary-text-colour);
+  padding: 1rem 0 0 0.5rem; /* No bottom padding to avoid spacing the text */
+}
+
+.chatbox-sidebar h6 {
+  background-color: var(--primary-colour);
+  color: var(--primary-text-colour);
+  padding: 1rem;
+  margin: 0 1rem;
+}
+
+.menu-items .users {
+  background: #1f587c; /* Prevents parent altering background */
+}
+
+.menu-items .users:hover {
+  background: #0c77b7;
+}
+
+.menu-items ul {
+  padding: 0;
+  margin: 0;
+}
+
+.menu-items .userList li {
+  color: #ffffff;
+  padding: 1rem;
+  margin: 0 1rem;
+  font-weight: 300;
+}
+
+.menu-items .userList li:hover {
+  background: #0c77b7;
+}
+
+.message {
+  width: 100%;
+  overflow-y: scroll;
+  max-height: 70vh; /* Prevents white space between footer */
+  background-color: var(--secondary-colour); 
+}
+
+.message .container {
+  background-color: var(--octonary-colour);
+  border-radius: 10px;
+  margin: 2rem;
+  padding: 1px 0;
+  display: block;
+  flex-direction: column;
+  animation: fadeInUp 1s;
+}
+
+.message p:nth-child(1) {
+  margin: 0.7rem 1rem;
+  color: var(--primary-colour);
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.message p:nth-child(2){
+  margin: 0.7rem 1rem;
+  color: var(--quaternary-text-colour);
+}
+
+.message span {
+  color: var(--secondary-text-colour); /* Prevents nth child from overriding colour */
+}
+
+.chatbox-input {
+  background-color: var(--octonary-colour);
+  height: 10%;  
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.chatbox-input form {
+  display: flex;
+  width: 100%;
+}
+
+.chatbox-input input {
+  margin-left: 2rem;
+  padding: 0.5rem;
+  width: 91%;
+  border: none;
+  color: var(--secondary-text-colour);
+}
+
+.chatbox-input button {
+  padding: 0.3rem 0.7rem;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: var(--septenary-colour);
+  color: var(--primary-text-colour);
+  margin-right: 2rem;
+}
+
+.chatbox-input svg {
+  fill: var(--secondary-colour);
+  height: 20px;
+  width: 20px;
+  margin-left: 0.3rem;
+}
+
+@media (max-width: 850px) {
+  .chatbox-heading button {
+    padding: 0.3rem 0.7rem;
+  }
+
+  .menu-items {
+    display: none; /* Triggers side menu toggle JS function */
+  }
+
+  .chatbox-sidebar {
+    width: 15%;
+  }
+
+  .sidebar-toggle {
+    display: flex;
+    margin: auto;
+  }
+
+  .chatbox-sidebar h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  .chatbox-sidebar svg {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .chatbox-heading h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+/* #endregion */
