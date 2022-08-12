@@ -1,7 +1,7 @@
 # 2005220_Comp260-A1-A2
 
 
-This project is a distributed system artiface and poster as part of comp260.
+This project is a distributed system artifact and poster as part of my comp260 module.
 My choosen atrifact is a one to one messaging app, mimicing a service known as 'live chat'.
 Live chat is a modern version of communication that replaces previously used static contact forms.
 The socket.io libary is being utalised to achieve communication between two test clients across pre assigned ports as the minimum viable product.
