@@ -1,11 +1,12 @@
 # 2005220_Comp260-A1-A2
 
+**Please note this project has been moved to this repo as its repo is inaccessible to users outside of the academic institution it was created under, therefore it will lack the relevant commit logs.**
 
 This project is a distributed system artifact and poster as part of my comp260 module.
-My choosen atrifact is a one to one messaging app, mimicing a service known as 'live chat'.
+My choosen artifact is a one to one messaging app, mimicking a service known as 'live chat'.
 Live chat is a modern version of communication that replaces previously used static contact forms.
-The socket.io libary is being utalised to achieve communication between two test clients across pre assigned ports as the minimum viable product.
-Please refer to the project proposol found in 'documentation' for a more detailed outline.
+The socket.io library is being utilized to achieve communication between two test clients across pre assigned ports as the minimum viable product.
+Please refer to the project proposal found in 'documentation' for a more detailed outline.
 
 A built version (socket functionality currently bugged therefore a local instance is recommended) can be found:
 http://jh248828.kemeneth.net:7000/users
@@ -42,7 +43,7 @@ This branch contains:
 
 This branch contains:
 
-** Both the proposol and poster for assignment 2 as well as the essay and artiface for assignment 1 **
+** Both the proposal and poster for assignment 2 as well as the essay and artifact for assignment 1 **
 
 - project proposol
 - project poster
@@ -55,7 +56,7 @@ This branch contains:
 ### Prerequisites
 
 - Node Package Manager (NPM) [Nodejs](https://nodejs.org/en/download/)
-- Socket.io libary (NPM will be used for this.)
+- Socket.io library (NPM will be used for this.)
 - Express-session (NPM will be used for this.)
 - File manager (File explorer recommended for windows users.)
 - Web browser (Google Chrome is recommended.)
@@ -87,23 +88,23 @@ This branch contains:
 
 `$ npm start`
 
-7.  Finally enter the local URL (http:localhost:8080/setup) into your web browser (the redirect to http:localhost:8080 will occure automaticaly).
+7.  Finally enter the local URL (http:localhost:8080/setup) into your web browser (the redirect to http:localhost:8080 will occur automatically).
 
 ** Note if when an additional user logs in and a new session isnt properly created use an ENTIRELY new browser, such as Microsoft Edge, rather than tab or instance. As browsers may cache sessions on thier own and conflict. **
 
 ### Controls
 
 - Register with firstname, lastname, username and password on index page.
-- Login in with an existing username and password in the same session as you used it previously (Dont entirely close the application inbetween.)
+- Login in with an existing username and password in the same session as you used it previously (Dont entirely close the application in between.)
 - Message using the chat interface on Chatbox page by typing to in the input below the chatbox and pressing enter on clicking send button.
 
 ## Commit Message Key
 
-** If any words used in the commit log used before the content of the message are unfamilar refer to this key **
+** If any words used in the commit log used before the content of the message are unfamiliar refer to this key **
 
 - feat: A feature that has been added.
 - fix: Bug fix.
-- refactor: Rewrite/Restructure your code, however does not change any behaviour
+- refactor: Rewrite/Restructure your code, however does not change any behavior
 - docs: Changes relating to documentation.
 - style: Formatting, missing code, white space. etc
 - Build: Packages or project version related commits.
