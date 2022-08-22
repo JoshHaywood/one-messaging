@@ -1,4 +1,4 @@
-# 2005220_Comp260-A1-A2
+# 2005220_Comp260-A1-A2 - One Messaging
 
 **Please note this project has been moved to this repo as its repo is inaccessible to users outside of the academic institution it was created under, therefore it will lack the relevant commit logs.**
 
@@ -13,15 +13,24 @@ http://jh248828.kemeneth.net:7000/users
 
 ## Contents
 
-- [Repository Layout](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#repository-layout)
-    - [Main](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#main)
-    - [Application](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#application)
-    - [Documentation](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#documentation)
-- [Installation](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#installation)
-    - [Prerequisites](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#prerequisites)
-    - [User Guide](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#user-guide)
-- [Commit Message Key](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#commit-message-key)
+- [One Messaging](#2005220_Comp260-A1-A2 - One Messaging)
+  - [Contents](#contents)
+  - [Main Features](#main-features)
+      - [Repository Layout](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#repository-layout)
+          - [Main](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#main)
+          - [Application](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#application)
+          - [Documentation](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#documentation)
+      - [Installation](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#installation)
+          - [Prerequisites](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#prerequisites)
+          - [User Guide](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#user-guide)
+      - [Commit Message Key](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#commit-message-key)
 
+## Main features
+
+The main target features are: 
+- Messaging interface
+- Session management for multiple users
+- Login / sign up authentication system
 
 ## Repository layout
 
