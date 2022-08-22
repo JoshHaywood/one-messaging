@@ -13,7 +13,7 @@ http://jh248828.kemeneth.net:7000/users
 
 ## Contents
 
-- [One Messaging](#2005220_Comp260-A1-A2-One Messaging)
+- [One Messaging](#2005220_Comp260-A1-A2-One-Messaging)
   - [Contents](#contents)
   - [Main Features](#main-features)
       - [Repository Layout](https://github.falmouth.ac.uk/JH248828/2005220_Comp260-A1-A2#repository-layout)
